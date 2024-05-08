@@ -2,12 +2,19 @@ from time import sleep
 
 
 def clear_screen():
+    # Очистить консоль и сбросить позицию курсора
     print("\033[H\033[J", end='')
 
 
-clear_screen()
-print("\033[35m" + """
-                _-o#&&*''''?d:>b\\_
+def print_frame(frame):
+    clear_screen()
+    # Установить цвет маджента и выводить кадр без дополнительного переноса строки
+    print("\033[35m" + frame, end='')
+
+
+frames = [
+    """
+                   _-o#&&*''''?d:>b\\_
               _o/'`''  '',, dMF9MMMMMHo_
            .o&#'        `'MbHMMMMMMMMMMMHo.
          .o'' '         vodM*$&&HMMMMMMMMMM?.
@@ -30,13 +37,9 @@ print("\033[35m" + """
             `~,   .                     ./
                 . _                  .-PP
                   '`--._,dd###pp='''
-""")
-
-sleep(1)
-
-clear_screen()
-print("\033[1A" * 23 + "\033[35m" + """
-                 .ovr:HMM#?:`' >b\\_
+    """,
+    """
+                  .ovr:HMM#?:`' >b\\_
               .,:&Hi' `'   '' \\\\|&bSMHo_
             oHMMM#*}          `?&dMMMMMMHo.
          .dMMMH'''''           ,oHH*&&9MMMM?.
@@ -59,13 +62,9 @@ print("\033[1A" * 23 + "\033[35m" + """
             -. `b,,    .                . '
               '-\\   .,               .-`
                   '-:b~\\\\_,oddq==--'
-""")
-
-sleep(1)
-
-clear_screen()
-print("\033[1A" * 23 + "\033[35m" + """
-                _oo##'9MMHb':'-,o_
+    """,
+    """
+                  _oo##'9MMHb':'-,o_
               .vM':HH$'    '''  '' -\\7*_
            .oHMMMHMH#9:          '\\bMMMMHo.
          . ,dMMMMMMMMMMM'`' `           ?MP?.
@@ -88,13 +87,9 @@ print("\033[1A" * 23 + "\033[35m" + """
             -.         #M: .    .       .-
               ` .         .,         .-
                   '-.-~ooHH__,,v~--`
-""")
-
-sleep(1)
-
-clear_screen()
-print("\033[1A" * 23 + "\033[35m" + """
-                _,\\?dZkMHF&$*q#b..
+    """,
+    """
+                  _,\\?dZkMHF&$*q#b..
               .//9MMMMMMM?:'HM\\\\'`-''`..
            ..`  :MMMMMMMMMMHMMMMH?_    `-\\
          .     .dMMMMMMMMMMMMMM''''       `\\.
@@ -117,13 +112,9 @@ print("\033[1A" * 23 + "\033[35m" + """
            `.                &M'..  .   ..'
               ' .             ._     .-
                   '-. -voboo#&:,-.-`
-""")
-
-sleep(1)
-
-clear_screen()
-print("\033[1A" * 23 + "\033[35m" + """
-                _\\oo\\?ddk9MRbS>v\\_
+    """,
+    """
+                  _\\oo\\?ddk9MRbS>v\\_
               ..:>*''MMMMMMMMM:?|H?$?-.
            ..- -     'HMMMMMMMMMMHMMMH\\_-.
          .            dMMMMMMMMMMMMMMT'    .
@@ -146,13 +137,9 @@ print("\033[1A" * 23 + "\033[35m" + """
             -.                    ,M'-  ..'
               ` .                .. ..-`
                   '-. .\\ooooboo<^.-`
-""")
-
-sleep(1)
-
-clear_screen()
-print("\033[1A" * 23 + "\033[35m" + """
-                _o\\:,??\\??MR9#cb\\_
+    """,
+    """
+                  _o\\:,??\\??MR9#cb\\_
               .v/''':&#''#HMMMMMMM$?*d\\.
            ..~' - -`      `'#MMMMMMMMMMMHv.
          .-'                 HMMMMMMMMMMMR!.
@@ -175,13 +162,9 @@ print("\033[1A" * 23 + "\033[35m" + """
            `.                         ,/\\ '
               '-..                  _.-
                   '---.._\\o,oov+--''
-""")
-
-sleep(1)
-
-clear_screen()
-print("\033[1A" * 23 + "\033[35m" + """
-                _,oc>?_:b?o?HH#b\\_
+    """,
+    """
+                  _,oc>?_:b?o?HH#b\\_
               .v/99*''' '*H#''*HMMMMMZ,_
             oH* /'   -   '      '`#MMMMM#o.
          ./*>-                     `MMMMMMMb
@@ -203,13 +186,10 @@ print("\033[1A" * 23 + "\033[35m" + """
           . `    {!                        /
             -                           ,-'
               ' .                    .-
-""")
-
-sleep(1)
-
-clear_screen()
-print("\033[1A" * 23 + "\033[35m" + """
-                _,o#bH\\??::?o?cbo_
+                 ```^==\\_.,,,ov--\\-`
+    """,
+    """
+                  _,o#bH\\??::?o?cbo_
               .o#MH#**SH''' '`*H#'*#MHo_
             oHMMMH^  ^'    -  `      '*HHo.
          .dMMM#'>>-                     `HM?.
@@ -232,13 +212,9 @@ print("\033[1A" * 23 + "\033[35m" + """
            ` .                          ..'
                - .                  ..-
                   '`*#d##c.._\\v----`
-""")
-
-sleep(1)
-
-clear_screen()
-print("\033[1A" * 23 + "\033[35m" + """
-                _oo#H&d#b?\\b:_>>\\_
+    """,
+    """
+                  _oo#H&d#b?\\b:_>>\\_
               .oHMMMMMMH*'*9R''-``*#P\\-_
             oHMMMMMMMMM$  .'       '   `^-
          .dMMMMMMMMH*',?-                 '\\.
@@ -261,13 +237,9 @@ print("\033[1A" * 23 + "\033[35m" + """
            `-                           ..'
               ' .                    .-
                   '`*##HMH##:__,-.-`
-""")
-
-sleep(1)
-
-clear_screen()
-print("\033[1A" * 23 + "\033[35m" + """
-                _,dd#HMb&dHo?\\?:\\_
+    """,
+    """
+                  _,dd#HMb&dHo?\\?:\\_
               .oHMMMMMMMMMMMH***9P'`'\\v.
             oHMMMMMMMMMMMMMMM>  `'      -.
          .dMMMMMMMMMMMMMMMH*'|~-'          .
@@ -290,13 +262,9 @@ print("\033[1A" * 23 + "\033[35m" + """
            `..                          ..'
               `  .                   .-
                   '`'#HHMMMMM#<>..-`
-""")
-
-sleep(1)
-
-clear_screen()
-print("\033[1A" * 23 + "\033[35m" + """
-                _,,>#b&HMHd&&bb>\\_
+    """,
+    """
+                  _,,>#b&HMHd&&bb>\\_
               _oHMMMMMMMMMMMMMMMMH**H:.
             oHMMMMMMMMMMMMMMMMMMMM#v`?  `.
          .dMMMMMMMMMMMMMMMMMMMMMMH*`+|     .
@@ -319,13 +287,9 @@ print("\033[1A" * 23 + "\033[35m" + """
            `.                           .-
               '- .                   .-`
                   '`\\bqHMMMMMMHHb--`
-""")
-
-sleep(1)
-
-clear_screen()
-print("\033[1A" * 23 + "\033[35m" + """
-                    _,<_:&S6dHHHb&bb\\_
+    """,
+    """
+                  _,<_:&S6dHHHb&bb\\_
               .odHMMMMMMMMMMMMMMMMMMM}-_
            .oHMMMMMMMMMMMMMMMMMMMMMMMM#d:.
           ?9MMMMMMMMMMMMMMMMMMMMMMMMMMMH-$ .
@@ -348,36 +312,20 @@ print("\033[1A" * 23 + "\033[35m" + """
            ` .                          . '
               ` .                    . `
                   '--##HH#HMMMHH#''`
-""")
+    """
 
-sleep(1)
+]
 
-clear_screen()
-print("\033[1A" * 23 + "\033[35m" + """
-                    .-:?,Z?:&$dHH##b\\_
-               ,:bqRMMMMMMMMMMMMMMMMMHo.
-            .?HHHMMMMMMMMMMMMMMMMMMMMMMMHo.
-          -o/*M9MMMMMMMMMMMMMMMMMMMMMMMMMMMv
-        .:H\\b\\'|?#HHMMMMMMMMMMMMMMMMMMMMMM6?Z\\
-       .?MMMHbdbbodMMMMHMMMMMMMMMMMMMMMMMMMM\\':
-      :MMMMMMMMMMM7MMMMb?6P**#MMMMMMMMMMMMMMM_ :
-     \\MMMMMMMMMMMMb^MMMMMM?   `*MMMM*'`MMMR<' . -
-    .1MMMMMMMMMMMMMb]M#''       9MR'   `?MMb  \\. :
-    -MMMMMMMMMMMMMMMH##|`        *&.     |`*' .\\ .
-    -?''*MMMMMMMMMMMMM'            '    |?b  ,}' :
-    :    MMMMMMMMMMH'                    `M_|M}r\\?
-    .    `MMMMMMMMM'                      `$_:`''H
-    -     TMMMMMMMM,                        ''``::
-    :     {MMMMMMMM| oH|                      .#M-
-     :    `9MMMMMM' .MP   .                 ,oMMT
-      .     HMMMMP'  `'                    ,MMMP
-       -     `MMH'                         HH9*
-        '.    `                           ` .'
-          -                               . '
-           ` .               -          .-
-              ` .                    .-
-                  ' -==pHMMH##HH#'''
-""")
+# Определение максимального количества строк
+max_lines = max(frame.count('\n') for frame in frames)
+
+# Дополнение кадров до одинакового количества строк
+frames = [frame + '\n' * (max_lines - frame.count('\n')) for frame in frames]
+
+# Вывод всех кадров с паузой
+for frame in frames:
+    print_frame(frame)
+    sleep(1)  # Задержка 1 секунда между кадрами
 
 clear_screen()
-print("\u001b[37m" + "the end")
+print("\033[37m" + "Конец")  # Очистка и вывод сообщения о завершении
